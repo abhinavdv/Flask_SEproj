@@ -14,7 +14,7 @@
 						<div class="invalid-feedback">
 							{% for error in form.username.errors %}
 								<span>{{ error }}</span>
-							{% endfor %}	
+							{% endfor %}
 
 						</div>
 					{% else %}
@@ -24,7 +24,7 @@
 
 
 
-						
+
 
 				</div>
 				<br>
@@ -35,13 +35,13 @@
 						<div class="invalid-feedback">
 							{% for error in form.email.errors %}
 								<span>{{ error }}</span>
-							{% endfor %}	
+							{% endfor %}
 
 						</div>
 					{% else %}
 						{{ form.email(class="form-control form-control-lg") }}
 					{% endif %}
-	
+
 
 				</div>
 				<br>
@@ -52,13 +52,13 @@
 						<div class="invalid-feedback">
 							{% for error in form.password.errors %}
 								<span>{{ error }}</span>
-							{% endfor %}	
+							{% endfor %}
 
 						</div>
 					{% else %}
 						{{ form.password(class="form-control form-control-lg") }}
 					{% endif %}
-	
+
 
 				</div>
 				<br>
@@ -69,15 +69,16 @@
 						<div class="invalid-feedback">
 							{% for error in form.confirm_password.errors %}
 								<span>{{ error }}</span>
-							{% endfor %}	
+							{% endfor %}
 
 						</div>
 					{% else %}
 						{{ form.confirm_password(class="form-control form-control-lg") }}
 					{% endif %}
-	
+
 
 				</div>
+
 				<br>
 				<div class="form=group">
 					{{ form.mobile_number.label(class="form-control-label") }}
@@ -87,31 +88,37 @@
 						<div class="invalid-feedback">
 							{% for error in form.mobile_number.errors %}
 								<span>{{ error }}</span>
-							{% endfor %}	
+							{% endfor %}
 
 						</div>
 					{% else %}
 						{{ form.mobile_number(class="form-control form-control-lg") }}
 					{% endif %}
+					<br>
+
+					<div class="form-check br-1" >
+					{{ form.admin(class="for-check-input") }}
+					{{ form.admin.label(class="for-check-input") }}
+
+
+				</div>
 
 
 
-
-						
 
 				</div>
 			</fieldset>
 			<div class="form-group">
 				{{ form.submit(class="btn btn-outline-info")}}
 			</div>
-		</form> 
+		</form>
 	</div>
 
-	
+
 	<div class="border-top pt-3">
-		
+
 		<small class="text-muted">
-			Have an account Already? 		
+			Have an account Already?
 		</small>
 		<br>
 		<small>

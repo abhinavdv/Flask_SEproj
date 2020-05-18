@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1>Your Home page </h1>
+    <h4>Listed below are your different medical entries:</h4>
+    {% for post in posts %}
+    {% if post.author.username == name %}
+        <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/' + post.author.image_file) }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('user_post', username=post.author.username) }}">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <h2><a class="article-title" href="{{ url_for('post', post_id = post.id) }}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% else %}
+
+    <br>
+    {% endif %}
+    {% endfor %}
+
+    {% endblock content%}
